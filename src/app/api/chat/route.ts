@@ -51,8 +51,17 @@ export async function POST(req: NextRequest) {
       },
     });
   } catch (error: any) {
-    console.error("Chat Error:", error);
-    return new Response(JSON.stringify({ error: "Failed to fetch response", details: error?.message }), {
+    console.error("--- CHAT ERROR DEBUG ---");
+    console.error("Name:", error?.name);
+    console.error("Message:", error?.message);
+    console.error("Stack:", error?.stack);
+    console.error("-------------------------");
+    
+    return new Response(JSON.stringify({ 
+      error: "Failed to fetch response", 
+      message: error?.message || "Unknown error",
+      details: error?.stack || "No stack trace available"
+    }), {
       status: 500,
       headers: { "Content-Type": "application/json" },
     });

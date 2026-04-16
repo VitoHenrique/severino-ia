@@ -3,6 +3,13 @@ import { neon } from "@neondatabase/serverless";
 
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY || "");
 
+if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+  console.warn("⚠️ WARNING: GOOGLE_GENERATIVE_AI_API_KEY not found in process.env");
+}
+if (!process.env.DATABASE_URL) {
+  console.warn("⚠️ WARNING: DATABASE_URL not found in process.env");
+}
+
 export const model = genAI.getGenerativeModel({
   model: "gemini-flash-latest",
   systemInstruction: `Você é o Severino, o grande mestre das vendas da equipe DBX. 🚀
