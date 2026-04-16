@@ -1,0 +1,255 @@
+GUIA COMERCIAL DISPARO OFICIAL
+
+
+O que é o DBX Send
+O DBX Send é a ferramenta oficial de disparo em massa da DBX, integrada à API Oficial do WhatsApp Business.
+
+Com o DBX Send, empresas podem enviar mensagens em larga escala para seus contatos de forma segura, aprovada pela Meta e em conformidade com as políticas do WhatsApp.
+
+Principais características:
+
+Envio de mensagens em massa via API Oficial (não é WhatsApp Web)
+Templates de mensagem aprovados pela Meta
+Relatórios de entrega em tempo real
+Segmentação de contatos por listas
+Agendamento de disparos
+Suporte a mídias (imagens, vídeos, documentos e botões)
+Vantagens em relação a métodos não oficiais:
+
+Risco de banimento: Muito baixo
+Escala: Até ilimitado
+Relatórios: Completos
+Suporte Meta: Sim
+Templates: Aprovados
+
+Como funciona o DBX Send
+O DBX Send funciona em 4 etapas principais:
+
+1. Preparação dos contatos
+
+Importe sua lista de contatos (CSV ou manual)
+Os contatos devem ter opt-in válido
+Números inválidos são filtrados automaticamente
+2. Criação do Template
+
+Crie o template de mensagem no painel
+Envie para aprovação da Meta
+Aprovação leva entre 1 minuto e 24 horas
+Após aprovado, o template fica disponível para uso
+3. Configuração do disparo
+
+Selecione o template aprovado
+Escolha a lista de contatos
+Defina data e horário (ou envie imediatamente)
+Configure variáveis personalizadas (nome, empresa, etc.)
+4. Envio e acompanhamento
+
+O sistema envia as mensagens respeitando os limites da API
+Acompanhe em tempo real: enviadas, entregues, lidas, respondidas
+Relatório completo disponível após o envio
+
+Pré-requisitos para o cliente
+Para utilizar o DBX Send, o cliente precisa atender aos seguintes requisitos:
+
+1. Conta na API Oficial do WhatsApp
+
+Ter um número conectado à API Oficial via DBX
+Meta Business Manager verificado
+Número com qualidade "Verde" ou "Amarela"
+2. Lista de contatos com opt-in
+
+Os contatos devem ter autorizado receber mensagens
+Não é permitido usar listas compradas
+Exemplos de opt-in válido: formulário no site, cadastro em evento, aceite em compra
+3. Template de mensagem aprovado
+
+Pelo menos um template aprovado pela Meta
+O template deve estar em conformidade com as políticas do WhatsApp
+4. Créditos ou plano ativo
+
+Ter um plano de disparo contratado ou créditos suficientes
+Verificar o saldo antes de agendar o disparo
+Observação: Sem esses pré-requisitos, o disparo não poderá ser realizado. Verifique todos os itens antes de iniciar.
+
+Planos e contratação
+O DBX Send oferece planos flexíveis para atender diferentes volumes de envio.
+
+Modelos de contratação:
+
+Plano por créditos — Compre pacotes de créditos e use conforme necessidade
+Plano mensal — Volume fixo mensal com preço reduzido
+Plano enterprise — Volume personalizado para grandes operações
+O que está incluso em todos os planos:
+
+Acesso ao painel de disparos
+Relatórios de entrega
+Suporte técnico
+Segmentação de listas
+Agendamento de envios
+Como contratar:
+
+Entre em contato com o time comercial da DBX
+Informe o volume estimado de envios mensais
+Receba a proposta personalizada
+Após aprovação, o acesso é liberado em até 24 horas
+Importante: Os custos de conversa cobrados pela Meta são separados do plano DBX Send. Consulte a seção "Taxa de conversas" para mais detalhes.
+
+Planos e contratação
+O DBX Send oferece planos flexíveis para atender diferentes volumes de envio.
+
+Modelos de contratação:
+
+Plano por créditos — Compre pacotes de créditos e use conforme necessidade
+Plano mensal — Volume fixo mensal com preço reduzido
+Plano enterprise — Volume personalizado para grandes operações
+O que está incluso em todos os planos:
+
+Acesso ao painel de disparos
+Relatórios de entrega
+Suporte técnico
+Segmentação de listas
+Agendamento de envios
+Como contratar:
+
+Entre em contato com o time comercial da DBX
+Informe o volume estimado de envios mensais
+Receba a proposta personalizada
+Após aprovação, o acesso é liberado em até 24 horas
+Importante: Os custos de conversa cobrados pela Meta são separados do plano DBX Send. Consulte a seção "Taxa de conversas" para mais detalhes.
+
+Após a compra
+Depois de contratar o DBX Send, siga os passos abaixo para começar a disparar:
+
+1. Acesso ao painel
+
+Você receberá as credenciais de acesso por e-mail
+Faça login no painel do DBX Send
+2. Configuração inicial
+
+Conecte seu número da API Oficial (se ainda não estiver conectado)
+Configure o perfil do remetente
+Importe sua primeira lista de contatos
+3. Primeiro disparo
+
+Crie ou selecione um template aprovado
+Faça um disparo de teste com poucos contatos
+Verifique o relatório de entrega
+Após validar, agende seu primeiro disparo em escala
+Dicas para o primeiro uso:
+
+Comece com um volume pequeno para testar
+Verifique se o template está personalizado corretamente
+Monitore as respostas dos clientes
+Acompanhe a qualidade do número após o envio
+
+Como criar um Template
+Templates são mensagens pré-aprovadas pela Meta, obrigatórias para iniciar conversas com clientes.
+
+Passo a passo:
+
+1. Acesse o painel de templates
+
+No menu do DBX Send, clique em "Templates"
+Clique em "Criar novo template"
+2. Configure o template
+
+Nome: identificador interno (sem espaços, use underscores)
+Categoria: Marketing, Utilidade ou Autenticação
+Idioma: Português (BR) ou outro conforme necessidade
+3. Monte o conteúdo
+
+Cabeçalho (opcional): texto, imagem, vídeo ou documento
+Corpo: texto principal com variáveis {{1}}, {{2}}, etc.
+Rodapé (opcional): texto pequeno
+Botões (opcional): URL, resposta rápida ou telefone
+4. Envie para aprovação
+
+Revise o conteúdo
+Clique em "Enviar para aprovação"
+Aguarde a análise da Meta (1 min a 24h)
+Dicas para aprovação:
+
+Seja claro sobre o propósito da mensagem
+Não use linguagem enganosa ou agressiva
+Inclua opção de opt-out quando aplicável
+Evite muitas variáveis no mesmo template
+
+Como criar um disparo
+Guia passo a passo para criar e enviar um disparo em massa no DBX Send.
+
+1. Acesse a seção de disparos
+
+No menu principal, clique em "Disparos"
+Clique em "Novo disparo"
+2. Selecione o template
+
+Escolha um template aprovado da lista
+Visualize o preview da mensagem
+3. Configure os destinatários
+
+Selecione uma lista de contatos existente
+Ou importe uma nova lista (CSV)
+Aplique filtros se necessário
+4. Personalize as variáveis
+
+Mapeie as variáveis do template com os campos da lista
+Exemplo: {{1}} = Nome do contato
+5. Agende ou envie
+
+Envio imediato: clique em "Enviar agora"
+Agendamento: defina data e horário
+Confirme o envio
+6. Acompanhe os resultados
+
+Acesse o relatório do disparo
+Métricas disponíveis: enviadas, entregues, lidas, respondidas, falhas
+
+Problemas comuns
+Lista dos problemas mais frequentes ao usar o DBX Send e como resolvê-los.
+
+1. Template rejeitado pela Meta
+
+Causa: conteúdo viola políticas ou está mal formatado
+Solução: revise o conteúdo, remova linguagem promocional agressiva e reenvie
+2. Mensagens não entregues
+
+Causa: número do destinatário inválido ou sem WhatsApp
+Solução: limpe a lista de contatos e remova números inválidos
+3. Qualidade do número caiu para "Vermelho"
+
+Causa: alta taxa de bloqueios ou denúncias
+Solução: pause os envios, melhore a segmentação e aguarde a recuperação
+4. Limite de envio atingido
+
+Causa: o número ainda está em nível baixo de limite
+Solução: envie volumes menores e mantenha boa qualidade para subir de nível
+5. Variáveis não preenchidas
+
+Causa: mapeamento incorreto entre lista e template
+Solução: verifique se os campos da lista correspondem às variáveis do template
+6. Disparo agendado não foi enviado
+
+Causa: créditos insuficientes ou número desconectado
+Solução: verifique saldo e status da conexão antes de agendar
+
+
+Dúvidas rápidas
+Respostas para as perguntas mais frequentes sobre o DBX Send.
+
+Posso enviar para qualquer número? Não. Você só pode enviar para contatos que deram opt-in (consentimento).
+
+Qual o limite de envios por dia? Depende do nível do seu número. Pode variar de 1.000 a ilimitado.
+
+Posso enviar imagens e vídeos? Sim, desde que o template tenha sido criado com cabeçalho de mídia.
+
+Quanto tempo demora a aprovação de um template? Entre 1 minuto e 24 horas. Em média, menos de 1 hora.
+
+O que acontece se meu número for banido? Se o número for banido pela Meta, não poderá mais ser usado na API. É necessário registrar um novo número.
+
+Posso usar o mesmo template para vários disparos? Sim, um template aprovado pode ser reutilizado em quantos disparos quiser.
+
+Como cancelo um disparo agendado? Acesse a seção de disparos, encontre o agendamento e clique em "Cancelar".
+
+Os relatórios ficam disponíveis por quanto tempo? Os relatórios ficam armazenados por 90 dias no painel.
+
+Posso disparar em horários específicos? Sim, o agendamento permite definir data e horário exatos para o envio.

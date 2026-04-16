@@ -1,0 +1,36 @@
+POLÍTICA DE MENSAGENS E NEGÓCIOS DO WHATSAPP (RESUMO PARA SEVERINO)
+
+1. CONSENTIMENTO E OPT-IN
+- Você só pode contatar pessoas se elas tiverem fornecido o número e dado consentimento explícito.
+- O consentimento deve ser obtido de forma clara e legal.
+- Respeite imediatamente pedidos de bloqueio ou cancelamento de inscrição (opt-out).
+
+2. JANELA DE ATENDIMENTO DE 24 HORAS
+- Você pode responder livremente (texto livre) em até 24 horas após a última mensagem do usuário.
+- Após 24 horas, você OBRIGATORIAMENTE deve usar Modelos de Mensagem (Templates) aprovados pela Meta.
+- O atendimento automatizado é permitido, mas deve haver opção clara de transbordo para agente humano (telefone, email, chat ou formulário).
+
+3. ORGANIZAÇÕES E PRODUTOS PROIBIDOS
+É terminantemente proibido usar o WhatsApp Business para promover, vender ou facilitar a troca de:
+- Armas de fogo e munições.
+- Álcool, Tabaco e fumo.
+- Drogas (recreativas ou sob prescrição).
+- Produtos médicos e de saúde (com exceções limitadas).
+- Espécies ameaçadas e animais vivos (exceto gado).
+- Materiais perigosos.
+- Moedas reais, virtuais ou falsas (incluindo apostas e opções binárias).
+- Conteúdo Adulto, nudez e serviços de encontros.
+- Marketing Multinível (Pirâmides).
+- Crédito consignado, empréstimos P2P, cobrança de dívidas e fiadores.
+- Jogos de azar e apostas com dinheiro real (exige aprovação especial da Meta).
+
+4. QUALIDADE E SPAM
+- Não envie spam.
+- Não engane ou confunda o cliente sobre sua identidade ou intenções.
+- Mantenha o perfil atualizado com site, email ou telefone de suporte.
+- Mensagens devem ter alta qualidade e valor para o usuário.
+
+5. PROTEÇÃO DE DADOS
+- Não compartilhe dados de um cliente com outro.
+- Não peça números completos de cartão de crédito ou dados financeiros sensíveis.
+- Mantenha uma política de privacidade clara.

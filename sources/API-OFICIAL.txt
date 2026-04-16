@@ -1,0 +1,236 @@
+GUIA DE VENDAS API OFICIAL
+
+1. Conta Meta Business (antigo Facebook Business Manager)
+
+Criar uma conta em business.facebook.com
+Verificar a empresa (documentação oficial, CNPJ, domínio do site)
+A verificação pode levar de 2 a 7 dias úteis
+2. Número de telefone
+
+Um número de telefone que não esteja vinculado a nenhuma conta WhatsApp pessoal ou Business App
+O número deve ser capaz de receber SMS ou chamada de voz para verificação
+Recomenda-se usar um número fixo ou celular dedicado
+3. Provedor de Solução (BSP)
+
+Escolher um BSP (Business Solution Provider) autorizado pela Meta
+O BSP fornecerá acesso à API e painel de gerenciamento
+Exemplos de BSPs: 360dialog, Gupshup, Twilio, entre outros
+4. Informações da empresa
+
+Nome comercial da empresa
+Endereço completo
+Site oficial da empresa (domínio verificado)
+Descrição do uso pretendido da API
+5. Conformidade com políticas
+
+Aceitar os Termos de Serviço do WhatsApp Business
+Estar em conformidade com as Políticas Comerciais do WhatsApp
+Garantir que o segmento de atuação não está na lista de organizações proibidas
+Processo resumido de ativação:
+
+Criar conta no Meta Business Manager
+Verificar a empresa
+Contratar um BSP autorizado
+Registrar o número de telefone na API
+Configurar o perfil comercial
+Criar templates de mensagem para aprovação
+Iniciar o envio de mensagens
+Observações importantes:
+
+A verificação da empresa é obrigatória para enviar mensagens em escala
+Sem verificação, o limite é de 250 conversas por dia
+Após verificação, o limite pode aumentar progressivamente até ilimitado
+Templates de mensagem precisam ser aprovados pela Meta antes do uso
+
+Políticas Comerciais do WhatsApp Business:
+
+As Políticas Comerciais do WhatsApp Business definem como empresas podem utilizar o WhatsApp para se comunicar com clientes.
+
+Caso essas regras sejam violadas, a Meta pode:
+
+limitar envio de mensagens
+reduzir qualidade do número
+bloquear o número
+suspender a conta
+Regras principais
+
+1. Transparência da empresa
+
+A empresa deve ser clara sobre quem ela é.
+
+Obrigatório:
+
+manter perfil comercial atualizado
+incluir contato de suporte (email, site ou telefone)
+não se passar por outra empresa
+não enganar clientes sobre a natureza do negócio
+2. Consentimento do cliente (Opt-in)
+
+Você só pode enviar mensagens se:
+
+1️⃣ O cliente forneceu o número 2️⃣ O cliente autorizou receber mensagens
+
+Exemplos de opt-in válidos:
+
+formulário no site
+cadastro em landing page
+aceite em compra
+conversa iniciada pelo cliente
+A empresa é responsável por cumprir leis de privacidade (ex: LGPD).
+
+3. Respeitar pedidos de descadastro
+
+Se o cliente pedir para parar de receber mensagens, a empresa deve:
+
+interromper o envio
+remover o contato da lista
+Ignorar esse pedido pode gerar denúncias e bloqueio do número.
+
+🚫 Condutas proibidas
+
+Não é permitido:
+
+se passar por outra empresa
+enganar ou confundir clientes
+enviar spam
+enviar mensagens sem consentimento
+🔐 Proteção de dados
+
+A empresa deve:
+
+possuir política de privacidade pública
+obter consentimento para coletar e usar dados
+usar dados apenas para comunicação com o cliente
+Não é permitido usar dados obtidos no WhatsApp para outras finalidades não relacionadas à conversa.
+
+⚠️ Informações sensíveis (proibido solicitar)
+
+Não solicite via WhatsApp:
+
+número completo de cartão de crédito
+dados bancários completos
+documentos de identidade
+informações financeiras sensíveis
+Dados de saúde
+
+O WhatsApp não deve ser usado para:
+
+telemedicina
+envio de informações médicas sensíveis
+Isso pode violar leis de proteção de dados em diversos países.
+
+🔒 Confidencialidade das conversas
+
+Conversas com clientes são privadas.
+
+Não é permitido:
+
+compartilhar conversas com outros clientes
+divulgar mensagens sem autorização
+Impacto para clientes DBX
+
+Clientes que utilizam a API Oficial devem:
+
+possuir opt-in dos contatos
+respeitar pedidos de descadastro
+não utilizar listas compradas
+manter transparência sobre a empresa
+📚 Fonte oficial
+
+https://business.whatsapp.com/policy
+
+Regras Práticas:
+
+Guia prático com as regras essenciais para utilização da API oficial do WhatsApp Business.
+
+Boas Práticas de Envio
+
+Envie mensagens apenas em horário comercial quando possível
+Respeite o opt-out imediatamente
+Mantenha templates atualizados e aprovados
+Monitore a qualidade da sua conta regularmente
+O que Evitar
+
+Não envie spam ou mensagens em massa não solicitadas
+Não compartilhe conteúdo enganoso ou falso
+Não utilize a API para fins ilegais
+Não venda ou compartilhe dados de contatos
+
+Organizações Proibidas:
+
+Lista de tipos de organizações que não podem utilizar a API oficial do WhatsApp Business.
+
+Categorias Proibidas
+
+Venda de produtos ilegais
+Jogos de azar não regulamentados
+Venda de armas e munições
+Conteúdo adulto
+Esquemas de pirâmide ou marketing multinível fraudulento
+
+Setores Regulamentados:
+
+Alguns setores possuem regras específicas para uso da API do WhatsApp Business.
+
+Setores com Regulamentação Especial
+
+Saúde — Requer cuidados especiais com dados sensíveis (LGPD)
+Financeiro — Deve seguir regulamentações do Banco Central
+Educação — Comunicação com menores requer consentimento dos responsáveis
+Governo — Deve seguir políticas de transparência pública
+
+Mensagens de Marketing:
+
+Regras e melhores práticas para envio de mensagens de marketing via API do WhatsApp.
+
+Definição
+
+Mensagens de marketing são aquelas que promovem produtos, serviços ou ofertas da empresa.
+
+Requisitos
+
+Opt-in explícito do destinatário
+Template aprovado pelo WhatsApp
+Conteúdo relevante e não enganoso
+Opção clara de opt-out
+
+Mensagens de Utilidade:
+
+Mensagens de utilidade são comunicações transacionais e informativas.
+
+Exemplos
+
+Confirmação de pedido
+Atualização de status de entrega
+Lembretes de agendamento
+Notificações de pagamento
+Alertas de segurança da conta
+
+Limites de Mensagens:
+
+O WhatsApp impõe limites de envio baseados na qualidade e histórico da conta.
+
+Níveis de Limite
+
+Nível	Limite de Contatos Únicos / 24h
+Nível 1	1.000
+Nível 2	10.000
+Nível 3	100.000
+Nível 4	Ilimitado
+Como Aumentar o Limite
+
+Manter alta qualidade de envio
+Baixa taxa de bloqueio/denúncia
+Tempo consistente de uso da API
+
+Taxa de Conversas:
+
+O modelo de cobrança do WhatsApp Business API é baseado em conversas.
+
+Tipos de Conversa
+
+Iniciada pelo usuário — Quando o cliente envia a primeira mensagem
+Iniciada pela empresa — Quando a empresa inicia o contato via template
+Precificação
+
+As tarifas variam por país e tipo de conversa. Consulte a tabela oficial da Meta para valores atualizados.

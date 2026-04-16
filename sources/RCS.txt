@@ -1,0 +1,34 @@
+GUIA DE VENDAS E REGRAS DO RCS
+
+RCS é o novo SMS da google, é uma tecnologia que permite o envio de mensagens ricas em recursos, como imagens, vídeos, áudio. Com limites sem banimento
+
+
+Conexão e Internet O comercial precisa saber o que dizer se o cliente perguntar sobre a rede.
+A regra: O computador e os celulares precisam estar na mesma rede Wi-Fi ou conectados via USB? Geralmente, estabilidade é tudo.
+Sugestão: Incluir que uma internet estável é requisito básico para que os disparos não falhem.
+O "Pulo do Gato" da Velocidade (Objeção de Venda) O vendedor vai ouvir: "Ah, mas está demorando para enviar".
+A resposta do Felipe: "O problema não é o sistema, é a sua infraestrutura. Quer velocidade? Conecta mais aparelhos." Isso transforma uma reclamação em uma oportunidade de o cliente entender que o poder está no hardware dele.
+Pós-Venda e Suporte (Responsabilidade) Deixar claro até onde vai o papel do vendedor.
+A regra: O vendedor entrega a licença e os requisitos. Se o cliente tentar instalar em Windows pirata ou celular sem bateria e der erro, a culpa não é do comercial.
+
+O cliente pode rodar o sistema num MacBook ou Linux? Resposta: Negativo. É obrigatório que o cliente tenha uma máquina com Windows. Não abrimos exceção para este requisito técnico, pois o software depende dessa estrutura.
+O cliente utiliza iPhone, ele consegue fazer os disparos? Resposta: Para a operação de disparo, é obrigatório ter, no mínimo, um telemóvel Android. O sistema foi desenhado para esta plataforma. Se o cliente só tiver iOS, ele precisará de adquirir um Android básico para iniciar.
+Existe um limite de mensagens que podem ser enviadas por dia? Resposta: Não há limite de disparos. O cliente pode enviar quantas mensagens quiser. O que ele precisa entender é que o volume está diretamente ligado à infraestrutura de hardware dele.
+Por que é que o envio de um cliente demora mais do que o de outro? Resposta: O tempo é variável. Depende de dois fatores: a quantidade total de disparos e o número de aparelhos Android conectados simultaneamente. Para maior velocidade, recomendamos aumentar o número de telemóveis na operação.
+Posso vender o sistema sem garantir que o cliente tem o Windows? Resposta: De forma alguma. Informar sobre o Windows e o Android é obrigatório no momento da venda para evitar problemas de suporte e cancelamento.
+Se o cliente colocar 10 telemóveis Android, os disparos ficam mais rápidos? Resposta: Sim. Quanto mais aparelhos, maior o processamento e menor o tempo de entrega do lote de mensagens.
+O sistema funciona sem telemóvel, apenas pelo computador? Resposta: Não. O computador com Windows gere o sistema, mas o "motor" do disparo é o telemóvel Android. Sem o telemóvel, não há disparo.
+
+REGRAS DE LICENCIAMENTO E HARDWARE:
+Licença Unitária (PC): Cada licença do software dá direito à instalação em apenas UM computador. Não é permitido instalar a mesma licença no PC de casa e no do trabalho, por exemplo. Se o cliente precisar de duas máquinas, ele deve adquirir duas licenças.
+Escalabilidade de Dispositivos (Mobile): Dentro de uma única licença instalada no PC, o cliente pode conectar vários aparelhos celulares Android simultaneamente. Isso aumenta a velocidade dos disparos, mas o controle centralizado permanece em uma única máquina Windows.
+
+Sempre que um vendedor perguntar sobre requisitos ou limites, você DEVE reforçar os itens obrigatórios (Windows, Android, e a regra de volume de disparos)."
+O Guia de Diretrizes (Para você subir como arquivo TXT ou PDF) Suba um arquivo com este conteúdo para que a IA tenha de onde tirar os dados "oficiais":
+GUIA COMERCIAL RCS - DIRETRIZES OBRIGATÓRIAS
+Requisitos Técnicos do Cliente:
+Sistema Operacional: É obrigatório que o cliente possua uma máquina com Windows.
+Dispositivo Móvel: É obrigatório possuir, no mínimo, um celular Android para iniciar os disparos.
+Capacidade de Disparo:
+Limite: Não existe um limite máximo de disparos por dia.
+Performance: O tempo total de envio varia conforme o volume de mensagens e a quantidade de aparelhos conectados. Quanto mais celulares, maior a velocidade.
