@@ -28,6 +28,7 @@ export async function getContext() {
     if (!process.env.DATABASE_URL) return "";
     const sql = neon(process.env.DATABASE_URL);
     const sources = await sql`SELECT title, content FROM sources`;
+    console.log(`Database query returned ${sources.length} sources.`);
     let context = "CONTEXTO DOS DOCUMENTOS FONTE:\n\n";
 
     for (const source of sources) {
