@@ -5,6 +5,13 @@ import { ChatInput } from "@/components/chat-input";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { Database, X, FileText } from "lucide-react";
+
+interface SourceFile {
+  name: string;
+  size: number;
+  updatedAt: string;
+}
 
 interface Message {
   role: "user" | "assistant";
@@ -17,10 +24,27 @@ export default function Home() {
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const [showSplash, setShowSplash] = useState(true);
+  const [showSources, setShowSources] = useState(false);
+  const [sourcesList, setSourcesList] = useState<SourceFile[]>([]);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => setShowSplash(false), 1500);
+    
+    // Fetch sources
+    const fetchSources = async () => {
+      try {
+        const res = await fetch("/api/sources");
+        const data = await res.json();
+        if (Array.isArray(data)) {
+          setSourcesList(data);
+        }
+      } catch (error) {
+        console.error("Failed to fetch sources", error);
+      }
+    };
+    fetchSources();
+    
     return () => clearTimeout(timer);
   }, []);
 
@@ -162,6 +186,15 @@ export default function Home() {
             </div>
 
             <div className="flex items-center gap-3">
+              <button
+                onClick={() => setShowSources(true)}
+                className="flex items-center gap-1.5 px-2.5 py-1 bg-zinc-900/50 border border-zinc-800/50 hover:bg-zinc-800 transition-colors text-zinc-400 hover:text-zinc-200"
+                style={{ borderRadius: "4px" }}
+              >
+                <Database className="w-3.5 h-3.5" />
+                <span className="text-[10px] tracking-wide font-medium">Fontes</span>
+              </button>
+
               <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 bg-zinc-900/50 border border-zinc-800/50" style={{ borderRadius: "4px" }}>
                 <div className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 <span className="text-[10px] text-zinc-500 tracking-wide">Online</span>
@@ -223,6 +256,56 @@ export default function Home() {
               </p>
             </div>
           </footer>
+
+          {/* ── SOURCES MODAL ── */}
+          <AnimatePresence>
+            {showSources && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+                onClick={() => setShowSources(false)}
+              >
+                <motion.div
+                  initial={{ scale: 0.95, opacity: 0, y: 10 }}
+                  animate={{ scale: 1, opacity: 1, y: 0 }}
+                  exit={{ scale: 0.95, opacity: 0, y: 10 }}
+                  className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 w-full max-w-sm shadow-2xl relative overflow-hidden"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <button 
+                    onClick={() => setShowSources(false)}
+                    className="absolute top-4 right-4 text-zinc-500 hover:text-zinc-200 transition-colors"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                  
+                  <div className="flex items-center gap-2 mb-4">
+                    <Database className="w-5 h-5 text-emerald-400" />
+                    <h3 className="text-sm font-semibold text-zinc-200">Fontes de Conhecimento</h3>
+                  </div>
+                  
+                  <p className="text-xs text-zinc-400 mb-4 leading-relaxed">
+                    Estes são os documentos que o Severino acessa para gerar as respostas e garantir a precisão no atendimento.
+                  </p>
+                  
+                  <div className="space-y-2 max-h-60 overflow-y-auto pr-2 scrollbar-thin">
+                    {sourcesList.length > 0 ? (
+                      sourcesList.map((source: SourceFile, i: number) => (
+                        <div key={i} className="flex items-center gap-2.5 p-2 rounded-lg bg-zinc-950/50 border border-zinc-800/50 text-xs text-zinc-300">
+                          <FileText className="w-3.5 h-3.5 text-zinc-500" />
+                          <span className="truncate">{source.name}</span>
+                        </div>
+                      ))
+                    ) : (
+                      <div className="text-center py-4 text-xs text-zinc-500">Nenhuma fonte encontrada.</div>
+                    )}
+                  </div>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Ambient Light */}
           <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 -z-10 h-[500px] w-[800px] bg-zinc-700/[0.06] [filter:blur(160px)] rounded-full pointer-events-none" />
