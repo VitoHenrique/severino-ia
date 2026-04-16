@@ -35,9 +35,12 @@ export async function POST(req: NextRequest) {
       messages: [
         { role: "system", content: SYSTEM_INSTRUCTION },
         ...history,
-        { role: "user", content: fullPrompt }
+        { 
+          role: "user", 
+          content: `${fullPrompt}\n\nLembre-se: Responda em NO MÁXIMO 3 frases. Use o formato: [Orientação curta] "Texto para o cliente". PROIBIDO usar asteriscos (*).` 
+        }
       ],
-      model: "llama-3.1-8b-instant",
+      model: "llama-3.3-70b-versatile",
       stream: true,
     });
     console.log("Groq call successful, starting stream...");
