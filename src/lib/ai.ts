@@ -31,7 +31,12 @@ export async function getContext() {
     let context = "CONTEXTO DOS DOCUMENTOS FONTE:\n\n";
 
     for (const source of sources) {
-      context += `--- INÍCIO DO DOCUMENTO: ${source.title} ---\n${source.content}\n--- FIM DO DOCUMENTO ---\n\n`;
+      const entry = `--- INÍCIO DO DOCUMENTO: ${source.title} ---\n${source.content}\n--- FIM DO DOCUMENTO ---\n\n`;
+      if ((context.length + entry.length) > 15000) {
+        context += "... (Contexto truncado para respeitar limites de taxa) ...";
+        break;
+      }
+      context += entry;
     }
 
     return context;
