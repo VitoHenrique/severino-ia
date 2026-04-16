@@ -251,10 +251,10 @@ export default function Home() {
           <footer className="px-4 sm:px-6 pb-6 pt-4 z-10">
             <div className="mx-auto max-w-2xl">
               <ChatInput onSend={handleSend} disabled={isLoading} />
-              <div className="mt-4 flex justify-center">
+              <div className="mt-6 flex justify-center">
                 <a 
                   href="/admin" 
-                  className="text-[10px] text-zinc-800 hover:text-zinc-600 transition-colors uppercase tracking-[0.2em] font-medium"
+                  className="px-4 py-2 border border-zinc-800 rounded-full text-[10px] text-zinc-500 hover:text-emerald-400 hover:border-emerald-500/30 transition-all uppercase tracking-[0.2em] font-bold bg-zinc-950/50"
                 >
                   Painel Admin
                 </a>
@@ -291,11 +291,7 @@ export default function Home() {
                     <h3 className="text-sm font-semibold text-zinc-200">Fontes de Conhecimento</h3>
                   </div>
                   
-                  <p className="text-xs text-zinc-400 mb-4 leading-relaxed">
-                    Estes são os documentos que o Severino acessa para gerar as respostas e garantir a precisão no atendimento.
-                  </p>
-                  
-                  <div className="space-y-2 max-h-60 overflow-y-auto pr-2 scrollbar-thin">
+                  <div className="space-y-2 mt-4 max-h-60 overflow-y-auto pr-2 scrollbar-thin">
                     {sourcesList.length > 0 ? (
                       sourcesList.map((source: SourceFile, i: number) => (
                         <div key={i} className="flex items-center gap-2.5 p-2 rounded-lg bg-zinc-950/50 border border-zinc-800/50 text-xs text-zinc-300">
