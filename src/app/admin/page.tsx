@@ -35,7 +35,12 @@ export default function AdminDashboard() {
 
   const handleSave = async (isNew: boolean) => {
     setIsSaving(true);
-    const payload = isNew ? { title: newTitle, content: newContent } : { title: editingSource?.title, content: editingSource?.content };
+    let payload;
+    if (isNew) {
+      payload = { title: newTitle, content: newContent };
+    } else {
+      payload = { id: editingSource?.id, title: editingSource?.title, content: editingSource?.content };
+    }
     
     try {
       const res = await fetch("/api/admin/sources", {
@@ -50,10 +55,11 @@ export default function AdminDashboard() {
         setNewContent("");
         await fetchSources();
       } else {
-        alert("Erro ao salvar a fonte.");
+        const errorData = await res.json();
+        alert(`Erro: ${errorData.error || "ao salvar a fonte"}`);
       }
     } catch(e) {
-      alert("Erro ao conectar.");
+      alert("Erro ao conectar ao servidor.");
     }
     setIsSaving(false);
   };

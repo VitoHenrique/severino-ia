@@ -9,6 +9,12 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
           <ShieldAlert className="w-4 h-4 text-emerald-400" />
           <h1 className="text-sm font-semibold tracking-wide text-zinc-100">Severino Admin Dashboard</h1>
         </div>
+        <a 
+          href="/" 
+          className="text-xs font-medium text-zinc-400 hover:text-emerald-400 transition-colors flex items-center gap-1"
+        >
+          Voltar para Home
+        </a>
       </header>
       <main className="p-6 max-w-5xl mx-auto">{children}</main>
     </div>

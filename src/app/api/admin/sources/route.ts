@@ -3,11 +3,20 @@ import { neon } from '@neondatabase/serverless';
 
 export async function POST(req: Request) {
   try {
-    const { title, content } = await req.json();
+    const { id, title, content } = await req.json();
     const sql = neon(process.env.DATABASE_URL || "");
-    await sql`INSERT INTO sources (title, content) VALUES (${title}, ${content}) ON CONFLICT (title) DO UPDATE SET content = EXCLUDED.content, updated_at = CURRENT_TIMESTAMP`;
+    
+    if (id) {
+      // Update by ID
+      await sql`UPDATE sources SET title = ${title}, content = ${content}, updated_at = CURRENT_TIMESTAMP WHERE id = ${id}`;
+    } else {
+      // Insert new
+      await sql`INSERT INTO sources (title, content) VALUES (${title}, ${content}) ON CONFLICT (title) DO UPDATE SET content = EXCLUDED.content, updated_at = CURRENT_TIMESTAMP`;
+    }
+    
     return NextResponse.json({ success: true });
   } catch(error: any) {
+    console.error("API Admin Source Error:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
