@@ -251,8 +251,10 @@ export default function Home() {
           <footer className="px-4 sm:px-6 pb-6 pt-4 z-10">
             <div className="mx-auto max-w-2xl">
               <ChatInput onSend={handleSend} disabled={isLoading} />
-              <p className="mt-3 text-center text-[10px] text-zinc-700 tracking-wider">
-                Severino IA · <span className="text-emerald-400/50">Texto em verde</span> = envie para o cliente
+              <p className="mt-3 text-center text-[10px] text-zinc-700 tracking-wider flex items-center justify-center gap-2">
+                <span>Severino IA · <span className="text-emerald-400/50">Texto em verde</span> = envie para o cliente</span>
+                <span className="text-zinc-800">|</span>
+                <a href="/admin" className="hover:text-emerald-400 transition-colors">Painel Admin</a>
               </p>
             </div>
           </footer>

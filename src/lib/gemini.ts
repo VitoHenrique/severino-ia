@@ -1,7 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import fs from "fs";
-import path from "path";
-import mammoth from "mammoth";
+import { neon } from "@neondatabase/serverless";
 
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY || "");
 
@@ -24,37 +22,18 @@ Restrição: PROIBIDO usar o caractere * (asterisco) para qualquer finalidade. M
 
 export async function getContext() {
   try {
-    const sourcesDir = path.join(process.cwd(), "sources");
-    if (!fs.existsSync(sourcesDir)) return "";
-
-    const files = await fs.promises.readdir(sourcesDir);
+    if (!process.env.DATABASE_URL) return "";
+    const sql = neon(process.env.DATABASE_URL);
+    const sources = await sql`SELECT title, content FROM sources`;
     let context = "CONTEXTO DOS DOCUMENTOS FONTE:\n\n";
 
-    for (const file of files) {
-      const filePath = path.join(sourcesDir, file);
-      const ext = path.extname(file).toLowerCase();
-      
-      let content = "";
-
-      try {
-        if (ext === ".txt" || ext === ".md") {
-          content = await fs.promises.readFile(filePath, "utf-8");
-        } else if (ext === ".docx") {
-          const result = await mammoth.extractRawText({ path: filePath });
-          content = result.value;
-        }
-      } catch (err) {
-        console.error(`Error processing file ${file}:`, err);
-      }
-
-      if (content) {
-        context += `--- INÍCIO DO ARQUIVO: ${file} ---\n${content}\n--- FIM DO ARQUIVO ---\n\n`;
-      }
+    for (const source of sources) {
+      context += `--- INÍCIO DO DOCUMENTO: ${source.title} ---\n${source.content}\n--- FIM DO DOCUMENTO ---\n\n`;
     }
 
     return context;
   } catch (error) {
-    console.error("Error reading sources:", error);
+    console.error("Error reading sources from DB:", error);
     return "";
   }
 }
