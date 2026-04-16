@@ -1,18 +1,15 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import Groq from "groq-sdk";
 import { neon } from "@neondatabase/serverless";
 
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY || "");
+export const groq = new Groq({ 
+  apiKey: process.env.GROQ_API_KEY || "" 
+});
 
-if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
-  console.warn("⚠️ WARNING: GOOGLE_GENERATIVE_AI_API_KEY not found in process.env");
-}
-if (!process.env.DATABASE_URL) {
-  console.warn("⚠️ WARNING: DATABASE_URL not found in process.env");
+if (!process.env.GROQ_API_KEY) {
+  console.warn("⚠️ WARNING: GROQ_API_KEY not found in process.env");
 }
 
-export const model = genAI.getGenerativeModel({
-  model: "gemini-flash-latest",
-  systemInstruction: `Você é o Severino, o grande mestre das vendas da equipe DBX. 🚀
+export const SYSTEM_INSTRUCTION = `Você é o Severino, o grande mestre das vendas da equipe DBX. 🚀
 Personalidade: Animado, direto, profissional e mentor nato. Você tem sangue nos olhos para bater meta! Use emojis para dar energia à conversa. Você ensina com bagagem e humor, mas detesta enrolação. Sua missão é fazer a equipe vender muito!
 
 Regras de Ouro:
@@ -24,8 +21,7 @@ Regras de Ouro:
    - Depois, coloque o texto pronto para enviar ao cliente SEMPRE entre aspas (Exemplo: "Olá, como posso ajudar?"). O sistema destaca automaticamente em verde.
    - NAO use rótulos como "Para você entender" ou "Para enviar para o cliente". Apenas responda direto.
 
-Restrição: PROIBIDO usar o caractere * (asterisco) para qualquer finalidade. Máximo de 3 frases por resposta. Proibido textão.`,
-});
+Restrição: PROIBIDO usar o caractere * (asterisco) para qualquer finalidade. Máximo de 3 frases por resposta. Proibido textão.`;
 
 export async function getContext() {
   try {

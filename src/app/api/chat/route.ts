@@ -1,4 +1,4 @@
-import { model, getContext } from "@/lib/gemini";
+import { groq, getContext, SYSTEM_INSTRUCTION } from "@/lib/ai";
 import { NextRequest } from "next/server";
 
 export async function POST(req: NextRequest) {
@@ -8,37 +8,38 @@ export async function POST(req: NextRequest) {
     
     // Obter contexto dos documentos fonte
     const context = await getContext();
-    const promptWithContext = context 
+    const fullPrompt = context 
       ? `${context}\n\nPERGUNTA DO USUÁRIO: ${lastMessage}`
       : lastMessage;
 
-    // Build history: Gemini requires it to start with 'user' and alternate user/model.
-    // We skip the last message (current user prompt) and any leading non-user messages.
-    const historyMessages = messages.slice(0, -1);
-    const firstUserIndex = historyMessages.findIndex(
-      (m: { role: string; content: string }) => m.role === "user"
-    );
-    const validHistory = firstUserIndex >= 0 ? historyMessages.slice(firstUserIndex) : [];
+    // Build history for Groq (OpenAI format)
+    const history = messages.slice(0, -1).map((m: any) => ({
+      role: m.role === "user" ? "user" : "assistant",
+      content: m.content
+    }));
 
-    const chat = model.startChat({
-      history: validHistory.map((m: { role: string; content: string }) => ({
-        role: m.role === "user" ? "user" : "model",
-        parts: [{ text: m.content }],
-      })),
+    const completion = await groq.chat.completions.create({
+      messages: [
+        { role: "system", content: SYSTEM_INSTRUCTION },
+        ...history,
+        { role: "user", content: fullPrompt }
+      ],
+      model: "llama-3.1-8b-instant",
+      stream: true,
     });
-
-    const result = await chat.sendMessageStream(promptWithContext);
 
     // Criar um ReadableStream para streaming
     const stream = new ReadableStream({
       async start(controller) {
         try {
-          for await (const chunk of result.stream) {
-            const chunkText = chunk.text();
-            controller.enqueue(new TextEncoder().encode(chunkText));
+          for await (const chunk of completion) {
+            const content = chunk.choices[0]?.delta?.content || "";
+            if (content) {
+              controller.enqueue(new TextEncoder().encode(content));
+            }
           }
         } catch (e) {
-          console.error("Stream reader error:", e);
+          console.error("Groq Stream error:", e);
         } finally {
           controller.close();
         }
@@ -57,12 +58,16 @@ export async function POST(req: NextRequest) {
     console.error("Stack:", error?.stack);
     console.error("-------------------------");
     
+    const isQuotaError = error?.message?.includes("429") || error?.status === 429;
+    
     return new Response(JSON.stringify({ 
-      error: "Failed to fetch response", 
-      message: error?.message || "Unknown error",
+      error: isQuotaError ? "Quota Exceeded" : "Failed to fetch response", 
+      message: isQuotaError 
+        ? "O limite gratuito do Groq foi atingido. Por favor, aguarde um momento ou verifique sua conta no console.groq.com."
+        : (error?.message || "Unknown error"),
       details: error?.stack || "No stack trace available"
     }), {
-      status: 500,
+      status: isQuotaError ? 429 : 500,
       headers: { "Content-Type": "application/json" },
     });
   }
